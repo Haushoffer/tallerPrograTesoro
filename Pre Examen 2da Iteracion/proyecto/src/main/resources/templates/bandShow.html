@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Band</title>
+
+</head>
+<style>
+        #wrapper {
+        min-height:100%;
+        position:relative;
+        }
+        #content {
+            padding-bottom:100px;
+        }
+        #footer {
+            clear: both;
+            position: relative;
+            z-index: 10;
+            height: 2em;
+            margin-top: -3em;
+            background-color: #778f9b;
+         }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+             background-color: #111;
+        }
+        .buttonLogOut{
+        background-color: #d81c25;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        }
+        .buttonProfile{
+        background-color: #2c8214;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;}
+        #footer {
+            clear: both;
+            position: relative;
+            z-index: 10;
+            height: 2em;
+            margin-top: -3em;
+            background-color: #778f9b;
+
+        }
+</style>
+<div id="wrapper">
+    <div id="header">
+        <ul>
+            <li><form th:action="@{/}" method="get">
+                <button class="buttonProfile">Home</button>
+            </form></li>
+            <li>
+                <form th:action="@{/myProfile}" method="get">
+                    <button class="buttonProfile">Profile</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/mySteps}" method="get">
+                    <button class="buttonProfile">Stats</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/myBands}" method="get">
+                    <button class="buttonProfile">Bands</button>
+                </form>
+            </li>
+            <li style="float:right">
+                <form th:action="@{/logout}" method="get">
+                    <button class="buttonLogOut" name="registration"
+                            type="Submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <br/><br/>
+        <div class="container">
+            <center>
+                <h2>Band Data</h2>
+                <div>
+                    <p th:utext="${band.id}"></p>
+                    <p th:utext="${band.serial}"></p>
+                    <p th:utext="${band.modelo}"></p>
+                </div>
+            </center>
+        </div>
+    </div>
+    <div id="footer">
+        <center>
+            <h3>Dream Team Developers ®</h3>
+        </center>
+    </div>
+</div>
+
+</html>

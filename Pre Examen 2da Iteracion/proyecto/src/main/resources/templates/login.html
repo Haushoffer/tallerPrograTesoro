@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <style>
+        body{
+            background-color:#6699CC;
+            position: static;
+        }
+
+        footer {
+            color: #fff;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 200px;
+            background-color: #233140;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        jumbotron{
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><mark>FITNESS DREAM</mark></a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul class="nav navbar-nav">
+
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form th:action="@{/registration}" method="get">
+                        <button class="btn btn-primary" type="Submit">Register</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<jumbotron>
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+    <p><img th:src="@{http://highway2fitness.com/wp-content/uploads/2016/09/fitness_tracker_guide_cover_2.jpg}"
+            src="${http://highway2fitness.com/wp-content/uploads/2016/09/fitness_tracker_guide_cover_2.jpg}" width="500" height="300"/></p><br /><br />
+        </div>
+        <div class="col-xs-6 col-md-4">
+    <p><img th:src="@{https://s-media-cache-ak0.pinimg.com/originals/65/0f/72/650f72e3a1d9ac336a4d55e577f83733.png}"
+            src="${https://s-media-cache-ak0.pinimg.com/originals/65/0f/72/650f72e3a1d9ac336a4d55e577f83733.png}" width="500" height="300"/></p><br /><br />
+        </div>
+        <div class="col-xs-6 col-md-4">
+    <p><img th:src="@{https://fitnesdomaonline.ru/Pics/verstka/multy_img-5-61232240.jpg}"
+            src="${https://fitnesdomaonline.ru/Pics/verstka/multy_img-5-61232240.jpg}" width="500" height="300"/></p><br /><br />
+        </div>
+
+    </div>
+            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+</jumbotron>
+
+<br /><br /><br />
+<div class="form-horizontal" id="Signup">
+        <div class="form-group">
+        <div class="col-lg-2 col-lg-offset-5">
+        <legend>Log in</legend>
+        </div>
+        </div>
+        <form th:action="@{/login}" method="POST" class="form-signin">
+            <div class="form-group">
+            <label for="username" class="col-lg-2 control-label col-lg-offset-3">Email</label>
+            <div class="col-lg-2 col-lg-offset-0">
+                <input type="text" id="username" name="username"  th:placeholder="email" class="form-control" />
+            </div>
+            </div>
+            <div class="form-group">
+            <label for="password" class="col-lg-2 control-label col-lg-offset-3">Password</label>
+            <div class="col-lg-2 col-lg-offset-0">
+                <input type="password"  th:placeholder="Password" id="password" name="password" class="form-control" />
+            </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-5">
+                    <button class="btn btn-primary" name="Submit" value="Login" type="Submit" th:text="Login"></button>
+                </div>
+            </div>
+        </form>
+</div>
+
+
+<footer class="footer">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4">
+            <br /><br /><br />
+            <h3>business name</h3>
+            <h4>Support our society when performing the exercises</h4>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            <br /><br />
+            <img th:src="@{http://www.ucb.edu.bo/Nacional/Forms/Noticias/MostrarFoto.aspx?nsfoto=92281}"
+                 src="${http://www.ucb.edu.bo/Nacional/Forms/Noticias/MostrarFoto.aspx?nsfoto=92281}" width="200" height="100"/><br /><br />
+            <copyright>
+                 Taller de Programación - Copyright &copy;2017
+            </copyright>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+            <br />
+            <nav>
+                <ul>Elaborado por:<br /><br /><a href="http://www.facebook.com/AntonioSabath">Juan Pablo Rodriguez Villaroel</a><br />
+                    <a href="http://www.facebook.com/AntonioSabath">Juan Antonio Sabath Awad</a><br />
+                    <a href="http://www.facebook.com/AntonioSabath">Mauricio Roberto Rios Valverde</a><br />
+                    <a href="http://www.facebook.com/AntonioSabath">Joel Joaquin Guzman Calizaya</a><br />
+                    <a href="http://www.facebook.com/AntonioSabath">Pedro Andres Merida Gutierrez</a>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
